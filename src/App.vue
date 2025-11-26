@@ -1,47 +1,41 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <Header />
+    <Home />
+    <FilterForm />
+    <Packages />
+    <Services />
+    <Pricing />
+    <Review />
+    <Contact />
+    <Footer />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
+import { onMounted } from 'vue'
+import Header from './components/Header.vue'
+import Home from './components/Home.vue'
+import FilterForm from './components/FilterForm.vue'
+import Packages from './components/Packages.vue'
+import Services from './components/Services.vue'
+import Pricing from './components/Pricing.vue'
+import Review from './components/Review.vue'
+import Contact from './components/Contact.vue'
+import Footer from './components/Footer.vue'
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+onMounted(() => {
+  // Handle scroll behavior
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar')
+    const loginForm = document.querySelector('.login-form')
+    
+    if (navbar) navbar.classList.remove('active')
+    if (loginForm) loginForm.classList.remove('active')
+  })
+})
+</script>
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+<style>
+@import './assets/styles/main.css';
 </style>
