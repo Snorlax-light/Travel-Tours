@@ -46,6 +46,7 @@
       <div class="remember">
         <input type="checkbox" v-model="rememberMe" id="login-remember">
         <label for="login-remember">remember me</label>
+        <a href="#" @click.prevent="handleRegister" class="register-link">Register Here</a>
       </div>
 
       <input type="submit" value="login" class="btn">

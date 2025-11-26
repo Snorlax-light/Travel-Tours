@@ -211,6 +211,16 @@ section{
   font-size: 1.5rem;
   cursor: pointer;
 }
+ .register-link {
+  color: var(--orange);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
 
 .header .login-form .btn{
   width: 100%;
