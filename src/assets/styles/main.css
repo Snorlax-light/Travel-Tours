@@ -281,6 +281,7 @@ section{
 
 .form-container form .btn{
   flex: 1 1 23rem;
+  margin-top: 2.5rem;  
 }
 
 .packages .box-container{
